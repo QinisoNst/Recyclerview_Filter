@@ -22,7 +22,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Presidents App";
-
+    Menu menu;
     MyApplication myApplication = (MyApplication) this.getApplication();
 
     List<President> presidentList;
@@ -63,39 +63,18 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
 
     }
-/*
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.sort_menu,menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-      /*  switch (item.getItemId()) {
-
-            case R.id.menu_aToz:
-
-                Toast.makeText(myApplication,"Sort A to Z",Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.menu_zToa:
-
-                Toast.makeText(myApplication,"Sort z to a",Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.menu_dateAccending:
-
-                Toast.makeText(myApplication,"Sort Ascending",Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.menu_dateDescending:
-
-                Toast.makeText(myApplication,"Sort Descending",Toast.LENGTH_SHORT).show();
-                return true;
-        }
-
-
         return super.onOptionsItemSelected(item);
     }
- */
 
 }
