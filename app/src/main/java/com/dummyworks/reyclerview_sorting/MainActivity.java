@@ -69,11 +69,24 @@ public class MainActivity extends AppCompatActivity {
 
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.sort_menu,menu);
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+            if(item.getItemId() == R.id.menu_aToz){
+
+                Toast.makeText(this, "Sort A to Z",Toast.LENGTH_SHORT).show();
+
+            }else if(item.getItemId() == R.id.menu_dateAscending){
+
+                Toast.makeText(this, "Sort date ascending",Toast.LENGTH_SHORT).show();
+
+            }else if(item.getItemId() == R.id.menu_dateAscending){
+
+                Toast.makeText(this, "Sort date descending",Toast.LENGTH_SHORT).show();
+
+            }
         return super.onOptionsItemSelected(item);
     }
 
