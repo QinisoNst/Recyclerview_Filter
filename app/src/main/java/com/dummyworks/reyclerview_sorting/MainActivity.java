@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -76,15 +78,27 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
             if(item.getItemId() == R.id.menu_aToz){
 
+                Collections.sort(presidentList, President.PresidentNameAZComparator);
                 Toast.makeText(this, "Sort A to Z",Toast.LENGTH_SHORT).show();
+                mAdapter.notifyDataSetChanged();
+
+            } else if(item.getItemId() == R.id.menu_zToa){
+
+                Collections.sort(presidentList, President.PresidentNameZAComparator);
+                Toast.makeText(this, "Sort Z to A",Toast.LENGTH_SHORT).show();
+                mAdapter.notifyDataSetChanged();
 
             }else if(item.getItemId() == R.id.menu_dateAscending){
 
+                Collections.sort(presidentList, President.PresidentDateAscendingComparator);
                 Toast.makeText(this, "Sort date ascending",Toast.LENGTH_SHORT).show();
+                mAdapter.notifyDataSetChanged();
 
-            }else if(item.getItemId() == R.id.menu_dateAscending){
+            }else if(item.getItemId() == R.id.menu_dateDescending){
 
+                Collections.sort(presidentList, President.PresidentDateDescendingComparator);
                 Toast.makeText(this, "Sort date descending",Toast.LENGTH_SHORT).show();
+                mAdapter.notifyDataSetChanged();
 
             }
         return super.onOptionsItemSelected(item);
